@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #F7F4EE;
+    color: #242126;
+    /* Use Inter from Google Fonts — premium, accessible typeface */
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* JetBrains Mono for all monospaced values (lab results, MRN, values) */
+  .font-mono {
+    font-family: "JetBrains Mono", "Menlo", "Consolas", "Courier New", monospace;
+  }
+
+  /* Improve default heading rendering */
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Accessible, high-contrast visible focus outlines (WCAG 2.1 AA) */
+*:focus-visible {
+  outline: 2px solid #C08A3E !important;
+  outline-offset: 3px !important;
+  border-radius: 4px;
+}
+
+/* Screen-reader-only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.focus\:not-sr-only:focus {
+  position: fixed;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Smooth page transitions */
+main {
+  animation: fadeInUp 0.25s ease-out;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* Custom scrollbar for clinical drawers */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F4EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9D2C7;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6F6870;
+}
+
+/* Print-safe clinical record styles */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; color: black; font-family: "Times New Roman", serif; }
+}
